@@ -1,0 +1,23 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+    password: lashchenkovaSQL
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/polyclinik
+    username: postgres
+jpa:
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: true
+      temp:
+        use_jdbc_metadata_defaults: false
+    javax:
+      persistence:
+        validation:
+          mode: none
+    show-sql: true
