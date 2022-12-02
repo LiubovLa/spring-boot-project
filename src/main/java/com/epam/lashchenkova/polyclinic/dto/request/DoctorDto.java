@@ -15,13 +15,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DoctorDto extends AbstractDto {
 
-    @NotEmpty()
-    private Long id;
-
     private String firstName;
 
     private String lastName;
 
+    @NotEmpty
     private Long hospital;
 
     private String specialization;

@@ -28,7 +28,6 @@ public class HospitalMapper {
 
     public Hospital dtoToEntity(HospitalDto dto) {
         return new Hospital()
-                .setId(dto.getId())
                 .setName(dto.getName())
                 .setAddress(dto.getAddress());
     }

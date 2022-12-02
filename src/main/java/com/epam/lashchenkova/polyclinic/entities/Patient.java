@@ -30,8 +30,7 @@ public class Patient extends AbstractEntity {
     @Column(name = "address")
     private String address;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH,
-            CascadeType.DETACH})
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "family_doctor")
     private Doctor doctor;
 

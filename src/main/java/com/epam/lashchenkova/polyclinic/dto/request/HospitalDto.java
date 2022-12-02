@@ -14,10 +14,9 @@ import javax.validation.constraints.NotEmpty;
 @RequiredArgsConstructor
 public class HospitalDto extends AbstractDto {
 
-    @NotEmpty()
-    private Long id;
-
+    @NotEmpty
     private String name;
 
+    @NotEmpty
     private String address;
 }
