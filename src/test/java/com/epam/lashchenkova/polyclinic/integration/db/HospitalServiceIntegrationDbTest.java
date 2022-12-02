@@ -25,7 +25,7 @@ public class HospitalServiceIntegrationDbTest extends AbstractDbTest {
     private HospitalRepository hospitalRepository;
 
     @Test
-    void whenValidOrganizationIsProvided_thenOrganizationIsCreatedInDb() {
+    void whenValidHospitalIsProvided_thenHospitalIsCreatedInDb() {
         HospitalDto testHospitalDto = TestDataFactory.getStubHospitalOneDto();
         hospitalService.save(testHospitalDto);
 
@@ -41,7 +41,6 @@ public class HospitalServiceIntegrationDbTest extends AbstractDbTest {
     }
 
     @Test
-  //  @Sql(statements = "INSERT INTO public.hospitals (name, address) VALUES ('Healthy baby', '23 August 102');", executionPhase= Sql.ExecutionPhase.BEFORE_TEST_METHOD)
     void whenHospitalWithExistingNameIsProvided_thenExceptionIsExpectedAndHospitalIsNotCreatedInDb() {
         HospitalDto testHospitalDto =
                 Builder.build(HospitalDto.class)

@@ -22,3 +22,11 @@ spring:
         db/hospital_insert_script.sql,
         db/patient_insert_script.sql
       hibernate.format_sql: true
+logging:
+  file: Spring_project.log
+  level:
+    com:
+      epam:
+        sdet: ERROR
+      org:
+        springframework: ERROR
