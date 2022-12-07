@@ -2,6 +2,7 @@ package com.epam.lashchenkova.polyclinic.convertor.mappers;
 
 import com.epam.lashchenkova.polyclinic.dto.request.PatientDto;
 import com.epam.lashchenkova.polyclinic.dto.response.PatientResponseDto;
+import com.epam.lashchenkova.polyclinic.entities.Doctor;
 import com.epam.lashchenkova.polyclinic.entities.Patient;
 import com.epam.lashchenkova.polyclinic.repositories.DoctorRepository;
 import com.epam.lashchenkova.polyclinic.repositories.HospitalRepository;
@@ -10,20 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Optional;
+
 @Component
 public class PatientMapper {
 
     @Autowired
-    HospitalRepository hospitalRepository;
-
-    @Autowired
     DoctorRepository doctorRepository;
-
-    @Autowired
-    PatientRepository patientRepository;
-
-    @Autowired
-    HospitalMapper mapper;
 
     public PatientResponseDto entityToResponseDto(Patient patient) {
         return new PatientResponseDto()
@@ -32,7 +26,10 @@ public class PatientMapper {
                 .setLastName(patient.getLastName())
                 .setAddress(patient.getAddress())
                 .setBirthday(patient.getBirthday())
-                .setHospital(patient.getDoctor().getHospital().getName())
+                .setHospital(patient
+                        .getDoctor()
+                        .getHospital()
+                        .getName())
                 .setDoctor(StringUtils.join(patient.getDoctor().getFirstName(), " ",
                         patient.getDoctor().getLastName()));
     }

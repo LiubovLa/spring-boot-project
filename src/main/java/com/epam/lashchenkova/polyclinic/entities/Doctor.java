@@ -32,13 +32,11 @@ public class Doctor extends AbstractEntity{
     @Column(name = "specialization")
     private String specialization;
 
-    @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY, cascade = { CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH,
-            CascadeType.DETACH})
+    @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
     private List<Patient> patients;
 
-    @ManyToOne(cascade = { CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH,
-            CascadeType.DETACH})
+    @ManyToOne(cascade = { CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(name = "hospital")
     private Hospital hospital;
 }

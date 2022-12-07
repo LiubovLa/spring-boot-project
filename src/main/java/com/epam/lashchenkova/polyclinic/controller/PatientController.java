@@ -4,6 +4,7 @@ import com.epam.lashchenkova.polyclinic.dto.request.PatientDto;
 import com.epam.lashchenkova.polyclinic.dto.response.PatientResponseDto;
 import com.epam.lashchenkova.polyclinic.entities.Patient;
 import com.epam.lashchenkova.polyclinic.services.PatientService;
+import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class PatientController {
 
     @PatchMapping("/doctorId={doctorId}&patientId={patientId}")
     public ResponseEntity<PatientResponseDto> updateDoctor(@PathVariable(value = "doctorId") Long doctorId,
-                                                           @PathVariable(value = "patientId") Long patientId) {
+                                                           @PathVariable(value = "patientId") Long patientId) throws NotFoundException {
         PatientResponseDto patientResponseDto = patientService.addDoctor(doctorId, patientId);
         return new ResponseEntity<>(patientResponseDto, HttpStatus.OK);
     }

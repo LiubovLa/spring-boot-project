@@ -26,7 +26,7 @@ public class Hospital extends AbstractEntity {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(mappedBy = "hospital", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "hospital", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Doctor> doctors;
 }

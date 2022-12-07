@@ -24,7 +24,6 @@ public class DoctorMapper {
 
     public DoctorResponseDto entityToResponseDto(Doctor doctor) {
         return new DoctorResponseDto()
-                .setId(doctor.getId())
                 .setFirstName(doctor.getFirstName())
                 .setLastName(doctor.getLastName())
                 .setSpecialization(doctor.getSpecialization())
@@ -34,7 +33,6 @@ public class DoctorMapper {
 
     public Doctor dtoToEntity(DoctorDto dto) {
         return new Doctor()
-                .setId(dto.getId())
                 .setFirstName(dto.getFirstName())
                 .setLastName(dto.getLastName())
                 .setSpecialization(dto.getSpecialization())
@@ -43,7 +41,7 @@ public class DoctorMapper {
     }
 
     public DoctorDto entityToDto(Doctor doctor) {
-        return new DoctorDto().setId(doctor.getId())
+        return new DoctorDto()
                 .setFirstName(doctor.getFirstName())
                 .setLastName(doctor.getLastName())
                 .setSpecialization(doctor.getSpecialization())
@@ -53,7 +51,6 @@ public class DoctorMapper {
 
     public DoctorResponseDto dtoToResponseDto(DoctorDto doctorDto) {
         return new DoctorResponseDto()
-                .setId(doctorDto.getId())
                 .setFirstName(doctorDto.getFirstName())
                 .setLastName(doctorDto.getLastName())
                 .setSpecialization(doctorDto.getSpecialization())

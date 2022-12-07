@@ -3,6 +3,7 @@ package com.epam.lashchenkova.polyclinic.controller;
 //import com.epam.lashchenkova.registrationServices.dto.DoctorDto;
 import com.epam.lashchenkova.polyclinic.dto.request.DoctorDto;
 import com.epam.lashchenkova.polyclinic.dto.response.DoctorResponseDto;
+import com.epam.lashchenkova.polyclinic.entities.Doctor;
 import com.epam.lashchenkova.polyclinic.services.DoctorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +37,9 @@ public class DoctorController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-//    @DeleteMapping("/delete={doctorId}")
-//    public ResponseEntity<Doctor> deletePatient(@PathVariable(value = "doctorId") Long doctorId) {
-//        doctorService.delete(doctorId);
-//        return ResponseEntity.status(HttpStatus.OK).build();
-//    }
+    @DeleteMapping("/delete={doctorId}")
+    public ResponseEntity<Doctor> deletePatient(@PathVariable(value = "doctorId") Long doctorId) {
+        doctorService.delete(doctorId);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 }

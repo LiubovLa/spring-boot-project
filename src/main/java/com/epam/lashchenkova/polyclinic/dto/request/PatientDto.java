@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;

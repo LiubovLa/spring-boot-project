@@ -15,9 +15,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DoctorResponseDto extends AbstractDto {
 
-    @NotEmpty()
-    private Long id;
-
     private String firstName;
 
     private String lastName;
