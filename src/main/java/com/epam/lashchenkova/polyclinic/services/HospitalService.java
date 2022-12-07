@@ -43,7 +43,7 @@ public class HospitalService {
 
     public HospitalResponseDto save(HospitalDto dto) {
         Hospital hospital = hospitalRepository.findByName(dto.getName());
-        if (!Objects.isNull(hospital)) {
+        if (Objects.nonNull(hospital)) {
             throw new RuntimeException("Hospital with such name already exists");
         }
         hospital = hospitalRepository.save(mapper.dtoToEntity(dto));

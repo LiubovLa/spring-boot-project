@@ -1,16 +1,11 @@
 package com.epam.lashchenkova.polyclinic.unit;
 
 import com.epam.lashchenkova.polyclinic.core.AbstractUnitTest;
-import com.epam.lashchenkova.polyclinic.dto.response.HospitalResponseDto;
 import com.epam.lashchenkova.polyclinic.dto.response.PatientResponseDto;
-import com.epam.lashchenkova.polyclinic.entities.Hospital;
 import com.epam.lashchenkova.polyclinic.entities.Patient;
-import com.epam.lashchenkova.polyclinic.repositories.HospitalRepository;
 import com.epam.lashchenkova.polyclinic.repositories.PatientRepository;
-import com.epam.lashchenkova.polyclinic.services.HospitalService;
 import com.epam.lashchenkova.polyclinic.services.PatientService;
 import com.epam.lashchenkova.polyclinic.util.TestDataFactory;
-import javassist.NotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;

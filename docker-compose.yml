@@ -1,0 +1,42 @@
+version: '3.1'
+services:
+  db:
+    image: postgres:9.5
+    container_name: polyclinic-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: lashchenkovaSQL
+      POSTGRES_DB: polyclinik
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - /var/lib/postgresql/data/pgdata
+    command: [ "postgres", "-c", "log_statement=all" ]
+    ports:
+      - 5432:5432
+    networks:
+      - polyclinic-app-network
+
+  app-server:
+    container_name: polyclinic-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    restart: always
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/polyclinik
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: lashchenkovaSQL
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    networks:
+      - polyclinic-app-network
+volumes:
+  db-data:
+
+networks:
+  polyclinic-app-network:
+    driver: bridge

@@ -37,7 +37,7 @@ public class HospitalController {
 
     @PostMapping("/save")
     public ResponseEntity<HospitalResponseDto> save(@Valid @RequestBody HospitalDto hospitalDto) {
-        if (Objects.isNull(hospitalService.save(hospitalDto))) {
+        if (Objects.isNull(hospitalDto)) {
             throw new InvalidParameterException(INVALID_INPUT);
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(hospitalService.save(hospitalDto));

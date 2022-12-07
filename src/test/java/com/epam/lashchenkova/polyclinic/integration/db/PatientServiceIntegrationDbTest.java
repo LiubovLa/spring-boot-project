@@ -1,19 +1,14 @@
 package com.epam.lashchenkova.polyclinic.integration.db;
 
 import com.epam.lashchenkova.polyclinic.core.AbstractDbTest;
-import com.epam.lashchenkova.polyclinic.dto.request.PatientDto;
-import com.epam.lashchenkova.polyclinic.dto.response.PatientResponseDto;
-import com.epam.lashchenkova.polyclinic.entities.Hospital;
 import com.epam.lashchenkova.polyclinic.entities.Patient;
 import com.epam.lashchenkova.polyclinic.repositories.PatientRepository;
 import com.epam.lashchenkova.polyclinic.services.PatientService;
-import com.epam.lashchenkova.polyclinic.util.Builder;
 import javassist.NotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Date;
 import java.util.Optional;
 
 public class PatientServiceIntegrationDbTest extends AbstractDbTest {
