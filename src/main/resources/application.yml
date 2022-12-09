@@ -5,9 +5,9 @@ spring:
   datasource:
     driverClassName: org.postgresql.Driver
     initialization-mode: always
-    username: ${RDS_USERNAME:root}
-    password: ${RDS_PASSWORD:}
-    url: jdbc:postgresql://${RDS_HOSTNAME:localhost}:${RDS_PORT:5432}/${RDS_DB_NAME:springtodo}
+    username: postgres
+    password: lashchenkovaSQL#2022
+    url: jdbc:postgresql://awseb-e-2ftxiapsqm-stack-awsebrdsdatabase-or2rwuc2eblf.cljrfxobcy27.us-east-1.rds.amazonaws.com:5432/ebdb
 
 jpa:
   properties:
