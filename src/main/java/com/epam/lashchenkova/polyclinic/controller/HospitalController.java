@@ -28,10 +28,10 @@ public class HospitalController {
     private HospitalService hospitalService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<HospitalResponseDto>> getAll() {
+    public ResponseEntity<String> getAll() {
         final List<HospitalResponseDto> hospitals = hospitalService.getAll();
         return hospitals != null &&  !hospitals.isEmpty()
-                ? new ResponseEntity<>(hospitals, HttpStatus.OK)
+                ? new ResponseEntity<>("vblk", HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
