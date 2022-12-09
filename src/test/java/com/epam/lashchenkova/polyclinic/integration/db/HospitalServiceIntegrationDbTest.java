@@ -3,7 +3,6 @@ package com.epam.lashchenkova.polyclinic.integration.db;
 import com.epam.lashchenkova.polyclinic.core.AbstractDbTest;
 import com.epam.lashchenkova.polyclinic.dto.request.HospitalDto;
 import com.epam.lashchenkova.polyclinic.entities.Hospital;
-import com.epam.lashchenkova.polyclinic.entities.Patient;
 import com.epam.lashchenkova.polyclinic.repositories.HospitalRepository;
 import com.epam.lashchenkova.polyclinic.services.HospitalService;
 import com.epam.lashchenkova.polyclinic.util.Builder;
@@ -11,7 +10,6 @@ import com.epam.lashchenkova.polyclinic.util.TestDataFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.jdbc.Sql;
 
 import java.util.Optional;
 

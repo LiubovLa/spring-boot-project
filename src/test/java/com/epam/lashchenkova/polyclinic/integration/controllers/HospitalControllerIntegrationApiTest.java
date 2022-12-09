@@ -4,7 +4,6 @@ import com.epam.lashchenkova.polyclinic.controller.HospitalController;
 import com.epam.lashchenkova.polyclinic.core.AbstractApiTest;
 import com.epam.lashchenkova.polyclinic.dto.request.HospitalDto;
 import com.epam.lashchenkova.polyclinic.dto.response.HospitalResponseDto;
-import com.epam.lashchenkova.polyclinic.entities.Hospital;
 import com.epam.lashchenkova.polyclinic.exception.GlobalExceptionHandler;
 import com.epam.lashchenkova.polyclinic.repositories.HospitalRepository;
 import com.epam.lashchenkova.polyclinic.services.HospitalService;
@@ -12,8 +11,6 @@ import com.epam.lashchenkova.polyclinic.util.Builder;
 import com.epam.lashchenkova.polyclinic.util.TestDataFactory;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import javassist.NotFoundException;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
@@ -27,12 +24,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.web.util.NestedServletException;
 
 import javax.servlet.http.HttpServletResponse;
 
 import java.text.MessageFormat;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
