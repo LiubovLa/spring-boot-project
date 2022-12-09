@@ -5,8 +5,8 @@ services:
     container_name: polyclinic-postgres
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: lashchenkovaSQL
+      POSTGRES_USER: ${RDS_USERNAME:root}
+      POSTGRES_PASSWORD: ${RDS_PASSWORD:}
       POSTGRES_DB: polyclinik
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
@@ -23,14 +23,14 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9000:9000"
+      - "5000:5000"
     restart: always
     depends_on:
       - db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/polyclinik
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: lashchenkovaSQL
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${RDS_HOSTNAME:localhost}:${RDS_PORT:5432}/${RDS_DB_NAME:springtodo}
+      SPRING_DATASOURCE_USERNAME: ${RDS_USERNAME:root}
+      SPRING_DATASOURCE_PASSWORD: ${RDS_PASSWORD:}
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     networks:
       - polyclinic-app-network
